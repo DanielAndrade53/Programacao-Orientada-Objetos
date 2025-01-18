@@ -1,6 +1,4 @@
-import java.io.Serializable;
-
-public class TransportadoraFormula implements Serializable {
+public class TransportadoraFormula {
     public enum Escolha {
         fr1, fr2, fr3, fr4
     }
@@ -9,6 +7,7 @@ public class TransportadoraFormula implements Serializable {
     TransportadoraFormula() {
         this.escolha = Escolha.fr1;
     }
+
     public void setEscolha(Escolha escolha) { this.escolha = escolha; }
     private double formula1(boolean premium, double preco, int imposto, double margemLucro) {
         return premium ? preco * (1+imposto) * 0.4 * 0.9 + margemLucro: preco*0.2*(1+imposto)*0.9 + margemLucro;

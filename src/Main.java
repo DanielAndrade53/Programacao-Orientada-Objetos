@@ -504,9 +504,9 @@ public class Main {
 
     public static void gerirTransportadoras() {
         System.out.println("\n[Transportadoras]");
-        System.out.println("(1) Adicionar transportadora");
         data.getTransportadoras().forEach(transportadora -> System.out.printf("(%d) %s\n", data.getTransportadoras().indexOf(transportadora)+2,
                 transportadora.getNome()));
+        System.out.println("(1) Adicionar transportadora");
         System.out.println("(0) Voltar para o menu principal");
         int codigo = input.nextInt();
         if (codigo == 0) {
@@ -814,7 +814,7 @@ public class Main {
                 }
             }
         }
-        calculateTotalValues(artigosEntreDatas, valoresTotais,1);
+        calculateTotalValues(artigosEntreDatas, valoresTotais);
         listaOrdenada(valoresTotais);
         estatisticasVintage();
     }
@@ -837,7 +837,7 @@ public class Main {
                 }
             }
         }
-        calculateTotalValues(artigosEntreDatas, valoresTotais,2);
+        calculateTotalValues(artigosEntreDatas, valoresTotais);
         listaOrdenada(valoresTotais);
         estatisticasVintage();
     }
@@ -899,19 +899,13 @@ public class Main {
     }
 
 
-    public static void calculateTotalValues(List<Artigos> artigosEntreDatas, Map<String, Double> valoresTotais, int codigo) {
+    public static void calculateTotalValues(List<Artigos> artigosEntreDatas, Map<String, Double> valoresTotais) {
         valoresTotais.clear();
 
         for (Utilizadores u : data.getUtilizadores()) {
             double total = 0;
             for (Artigos a : artigosEntreDatas) {
-                if (codigo == 1 && u.getVendidos().contains(a)) {
-                    total += a.precoFinal();
-                }
-                else if (codigo == 2 && u.getComprados().contains(a)) {
-                    total += a.precoFinal();
-                }
-                else return;
+                total += a.precoFinal();
             }
             valoresTotais.put(u.getNome(), total);
         }
