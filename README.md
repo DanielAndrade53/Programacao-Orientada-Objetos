@@ -1,9 +1,3 @@
-# Projeto-POO
+# Projeto Programação Orientada aos Objetos
 
-Projeto Programação Orientada aos Objetos
-
--- Apenas contem a src do código do projeto;
-
-DISCLAMER:
-PODE TER ALGUMA PARTE DE CODIGO ERRADA POIS NÃO ME LEMBRO SE É O RESULTADO FINAL OU NÃO;          
-TINHA MUITOS FOLDERS COM VARIAS VERSÕES DO TRABALHO E COMO NÃO SABIA QUAL ERA A FINAL APENAS DEI UPLOUD DE UMA QUE PARECIA CORRETA
+**Ano**: 2022/23
